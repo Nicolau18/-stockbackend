@@ -9,11 +9,14 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     // 1. Listar todos os produtos (GET /api/products)
+   
     public function index()
     {
-        return response()->json(Product::all(), 200);
+        return response()->json([
+            'success' => true,
+            'message' => 'Controller funcionando'
+        ]);
     }
-
     // 2. Criar um novo produto (POST /api/products)
     public function store(Request $request)
     {
